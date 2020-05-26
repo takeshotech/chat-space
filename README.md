@@ -1,5 +1,33 @@
 # README
 
+
+
+## usersテーブル
+
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, foreign_key: true|
+|name|varchar(200)|null: false, foreign_key: true|
+|email|integer|null: false, foreign_key: true|
+
+
+
+
+
+
+## goupsテーブル
+
+
+|Column|Type|Options|
+|------|----|-------|
+|group_name|varchar(200)|null: false, foreign_key: true|
+|group_member|integer|null: false, foreign_key: true|
+
+
+
+
+
 ## groups_usersテーブル
 
 |Column|Type|Options|
