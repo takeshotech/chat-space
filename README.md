@@ -10,22 +10,43 @@
 |id|integer|null: false, foreign_key: true|
 |name|varchar(200)|null: false, foreign_key: true|
 |email|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 
 
 
+### Association
+- has_many :groups, through: :groups_users
+    has_many :groups_users 
 
 
-## goupsテーブル
+
+## accountsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, foreign_key: true|
+|account＿number|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to :user
+
+
+## groupsテーブル
 
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|varchar(200)|null: false, foreign_key: true|
-|group_member|integer|null: false, foreign_key: true|
+|id|integer|null: false, foreign_key: true|
+|name|varchar(200)|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 
-
+### Association
+- has_many :users, through: :groups_users
+    has_many :groups_users 
 
 
 ## groups_usersテーブル
@@ -34,6 +55,10 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
 
 
 
@@ -49,8 +74,8 @@
 
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- belongs_to :users
+- has_many :messages
 
 
 
