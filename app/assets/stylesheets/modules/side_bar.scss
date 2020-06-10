@@ -7,7 +7,7 @@ a {
   height: 100vh;
   width: 300px;
   float: left;
-    &__user-name{
+    &__user-name {
     height: 100px;
     width: 300px;
     background-color: #253141;
@@ -17,8 +17,8 @@ a {
     .block1 {
       height: 20px;
       width: 260px;
-      background-color:#253141;
-      color: #ffffff;
+      background-color: #253141;
+      color: white;
       position: relative;
         &__name {
           float: left;
@@ -44,14 +44,14 @@ a {
     .group-all {
       height: 91px;
       &__name {
-        color: #ffffff;
+        color: white;
         height: 20px;
       }
       &__message {
        height: 15px;
        font-size: 11px;
        margin-top: 5px;
-       color: #ffffff;
+       color:white;
       }
     }
   }
