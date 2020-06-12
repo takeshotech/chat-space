@@ -4,7 +4,9 @@ a {
 }
 
 .side-bar {
+  height: 100vh;
   width: 300px;
+  float: left;
     &__user-name {
     height: 100px;
     width: 300px;
@@ -34,7 +36,7 @@ a {
         } 
       }
   &__chat-group {
-    height: 100vh;
+    height: 100%;
     width: 300px;
     padding: 20px;
     box-sizing: border-box;
