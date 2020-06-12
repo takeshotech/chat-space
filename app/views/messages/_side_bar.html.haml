@@ -6,12 +6,10 @@
       .block1__name
         masa
       .block1__icon
-        = link_to "#" do
-          = icon('far', 'fa-edit' )
-          <i class="far fa-edit"></i>
-        = link_to "#" do
-          = icon('fas', 'fa-cog')
-          <i class="fas fa-cog"></i>
+        = link_to "#", class: "contents__btn--icon" do
+          = icon('far', 'edit')
+        = link_to "#", class: "contents__btn--icon" do
+          = icon('fas', 'cog')
 
   .side-bar__chat-group
 
