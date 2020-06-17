@@ -4,11 +4,11 @@
 
     .block1
       .block1__name
-        masa
+        = current_user.name
       .block1__icon
         = link_to "#", class: "contents__btn--icon" do
           = icon('far', 'edit')
-        = link_to "#", class: "contents__btn--icon" do
+        = link_to edit_user_path(current_user), class: "contents__btn--icon" do
           = icon('fas', 'cog')
 
   .side-bar__chat-group
