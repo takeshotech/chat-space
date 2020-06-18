@@ -58,4 +58,8 @@ gem 'font-awesome-sass'
 
 gem 'devise'
 
+<<<<<<< Updated upstream
 gem 'pry-rails'
+=======
+gem 'pry-rails'
+>>>>>>> Stashed changes
