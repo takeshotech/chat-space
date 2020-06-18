@@ -5,4 +5,11 @@
 @import "mixins/vendor_prefix";
 @import "modules/side_bar";
 @import "modules/main_chat";
+<<<<<<< Updated upstream
 @import "messages/messages.scss"
+=======
+@import "messages/messages.scss";
+@import "modules/user";
+@import "modules/flash";
+@import "modules/group";
+>>>>>>> Stashed changes
