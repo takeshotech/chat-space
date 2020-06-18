@@ -1,3 +1,4 @@
+# ルーティングを追加
 Rails.application.routes.draw do
   devise_for :users
   # 下の行は削除する
@@ -5,9 +6,4 @@ Rails.application.routes.draw do
   root 'groups#index'
   resources :users, only: [:edit, :update]
   resources :groups, only: [:index, :new, :create, :edit, :update]
-<<<<<<< Updated upstream
-
 end
-=======
-end
->>>>>>> Stashed changes
