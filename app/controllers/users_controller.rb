@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   def edit
+    @group = Group.new
+    @message = Message.new
   end
 
 
