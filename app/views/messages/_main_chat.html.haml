@@ -10,37 +10,11 @@
           = current_user.name
     .right-header
       .right-header__button
-        Edit 
         = link_to 'Edit', edit_group_path(@group)
 
   .main-chat__message
-    .message
-      .upper-message
-        .upper-message__user-name
-          メンバー
-        .upper-message__date
-          2017/04/04
-      .lower-meesage
-        .lower-message__content
-          メッセージ
-    .message
-      .upper-message
-        .upper-message__user-name
-          メンバー
-        .upper-message__date
-          2017/04/04
-      .lower-meesage
-        .lower-message__content
-          メッセージ
-    .message
-      .upper-message
-        .upper-message__user-name
-          メンバー
-        .upper-message__date
-          2017/04/04
-      .lower-meesage
-        .lower-message__content
-          メッセージ
+    .messages
+      = render @messages
 
   .main-chat__message-form
     = form_for [@group, @message] do |f|
