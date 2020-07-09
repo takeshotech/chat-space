@@ -1,6 +1,4 @@
 $(function(){ 
-  // var last_message_id = $('.message:last').data("message-id");
-  // console.log(last_message_id);
   function buildHTML(message){
    if ( message.image ) {
      var html =
@@ -46,7 +44,6 @@ $(function(){
   e.preventDefault();
   var formData = new FormData(this);
   var url = $(this).attr('action')
-  console.log("iiii")
  
   $.ajax({
     url: url,
@@ -72,7 +69,7 @@ $(function(){
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     var last_message_id = $('.message:last').data("message-id");
-    
+
     $.ajax({
       //ルーティングで設定した通りのURLを指定
       url: "api/messages",
