@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
    if ( message.image ) {
      var html =
-      `<div class="message">
+      `<div class="message" data-message-id='${message.id}'>
          <div class="upper-message">
            <div class="upper-message__user-name">
              ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
      return html;
    } else {
      var html =
-      `<div class="messages">
+      `<div class="message" data-message-id='${message.id}'>
          <div class="upper-message">
            <div class="upper-message__user-name">
              ${message.user_name}
@@ -37,14 +37,13 @@ $(function(){
          </div>
        </div>`
      return html;
-   };
- }
+    };
+  }
 
  $('#new_message').on('submit', function(e){
   e.preventDefault();
   var formData = new FormData(this);
   var url = $(this).attr('action')
- 
   $.ajax({
     url: url,
     type: "POST",
@@ -57,6 +56,7 @@ $(function(){
      var html = buildHTML(data);
      $('.form__submit').attr('disabled', false);
      $('.messages').append(html);
+     console.log('test')
      $('form')[0].reset();
      $('.main-chat__message').animate({ scrollTop: $('.main-chat__message')[0].scrollHeight});
    })
@@ -69,7 +69,6 @@ $(function(){
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     var last_message_id = $('.message:last').data("message-id");
-
     $.ajax({
       //ルーティングで設定した通りのURLを指定
       url: "api/messages",
@@ -85,9 +84,9 @@ $(function(){
         var insertHTML = '';
         //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
         $.each(messages, function(i, message) {
-        insertHTML += buildHTML(message)
+          insertHTML += buildHTML(message)
         });
-        //メッセージが入ったHTMLに、入れ物ごと追加
+        //   //メッセージが入ったHTMLに、入れ物ごと追加
         $('.messages').append(insertHTML);
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       }
@@ -98,6 +97,5 @@ $(function(){
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
-    
   }
 });
